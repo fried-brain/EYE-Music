@@ -33,13 +33,10 @@ module.exports = {
             .setFooter(
               `To get info of each command type ${
                 GuildDB ? GuildDB.prefix : client.config.DefaultPrefix
-              }help [Command] | Have a nice day!`
+              }help [Command]`
             ).setDescription(`${Commands.join("\n")}
   
-  Version: v${require("../package.json").version}
-  [✨ Support Server](${
-    client.config.SupportServer
-  }) | [GitHub](https://github.com/alonefx/EYE-Music) | By [ALone](https://github.com/alonefx)`);
+  Version: v${require("../package.json").version}`);
     if (!args[0]) message.channel.send(Embed);
     else {
       let cmd =
