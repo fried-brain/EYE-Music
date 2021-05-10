@@ -19,18 +19,16 @@ module.exports = {
   run: async (client, message, args, { GuildDB }) => {
     let embed = new MessageEmbed()
       .setAuthor(
-        "Invite " + client.user.tag + " to your server!",
+        "Invite " + client.user.username + " to your server!",
         client.user.displayAvatarURL()
       )
       .setColor("BLUE")
       .setDescription(
-        `You can invite me by clicking [here](https://discord.com/oauth2/authorize?client_id=${
+        `You can invite me by clicking [here](https://discord.com/api/oauth2/authorize?client_id=${
           client.config.ClientID
         }&permissions=${
           client.config.Permissions
-        }&scope=bot%20${client.config.Scopes.join("%20")}&redirect_url=${
-          client.config.Website
-        }${client.config.CallbackURL}&response_type=code)`
+        }&scope=bot%20${client.config.Scopes.join("%20")})`
       );
     message.channel.send(embed);
   },
