@@ -55,7 +55,7 @@ module.exports = {
                     SongAddedEmbed.setAuthor(`Playlist added to queue`, message.author.displayAvatarURL());
                     SongAddedEmbed.addField("Enqueued", `\`${Searched.tracks.length}\` songs`, false);
                     //SongAddedEmbed.addField("Playlist duration", `\`${prettyMilliseconds(Searched.tracks, { colonNotation: true })}\``, false)
-                    Searching.edit(SongAddedEmbed);
+                    //Searching.edit(SongAddedEmbed);
                 } else if (Searched.loadType.startsWith("TRACK")) {
                     player.queue.add(TrackUtils.build(Searched.tracks[0], message.author));
                     if (!player.playing && !player.paused && !player.queue.size) player.play();
@@ -64,7 +64,7 @@ module.exports = {
                     SongAddedEmbed.addField("Author", Searched.tracks[0].info.author, true);
                     //SongAddedEmbed.addField("Duration", `\`${prettyMilliseconds(Searched.tracks[0].length, { colonNotation: true })}\``, true);
                     if (player.queue.totalSize > 1) SongAddedEmbed.addField("Position in queue", `${player.queue.size - 0}`, true);
-                    Searching.edit(SongAddedEmbed);
+                    //Searching.edit(SongAddedEmbed);
                 } else {
                     return client.sendTime(message.channel, "**No matches found for - **" + SearchString);
                 }
@@ -81,18 +81,18 @@ module.exports = {
                     SongAddedEmbed.setDescription(`[${Searched.playlist.name}](${SearchString})`);
                     SongAddedEmbed.addField("Enqueued", `\`${Searched.tracks.length}\` songs`, false);
                     SongAddedEmbed.addField("Playlist duration", `\`${prettyMilliseconds(Searched.playlist.duration, { colonNotation: true })}\``, false);
-                    Searching.edit(SongAddedEmbed);
+                    //Searching.edit(SongAddedEmbed);
                 } else {
                     player.queue.add(Searched.tracks[0]);
                     if (!player.playing && !player.paused && !player.queue.size) player.play();
-                    SongAddedEmbed.setAuthor(`Added to queue`, client.config.IconURL);
+                    //SongAddedEmbed.setAuthor(`Added to queue`, client.config.IconURL);
 
-                    SongAddedEmbed.setThumbnail(Searched.tracks[0].displayThumbnail());
-                    SongAddedEmbed.setDescription(`[${Searched.tracks[0].title}](${Searched.tracks[0].uri})`);
-                    SongAddedEmbed.addField("Author", Searched.tracks[0].author, true);
-                    SongAddedEmbed.addField("Duration", `\`${prettyMilliseconds(Searched.tracks[0].duration, { colonNotation: true })}\``, true);
-                    if (player.queue.totalSize > 1) SongAddedEmbed.addField("Position in queue", `${player.queue.size - 0}`, true);
-                    Searching.edit(SongAddedEmbed);
+                    //SongAddedEmbed.setThumbnail(Searched.tracks[0].displayThumbnail());
+                    //SongAddedEmbed.setDescription(`[${Searched.tracks[0].title}](${Searched.tracks[0].uri})`);
+                    //SongAddedEmbed.addField("Author", Searched.tracks[0].author, true);
+                    //SongAddedEmbed.addField("Duration", `\`${prettyMilliseconds(Searched.tracks[0].duration, { colonNotation: true })}\``, true);
+                    //if (player.queue.totalSize > 1) SongAddedEmbed.addField("Position in queue", `${player.queue.size - 0}`, true);
+                    //Searching.edit(SongAddedEmbed);
                 }
             }
         } catch (e) {
