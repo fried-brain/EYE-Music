@@ -21,7 +21,7 @@ module.exports = {
         let player = await client.Manager.get(message.guild.id);
         if (!player) return client.sendTime(message.channel, "❌ | **Nothing is playing right now...**");
         if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **You must be in a voice channel to use this command!**");
-        if (!parseInt(args[0])) return client.sendTime(message.channel, `**Please choose a number between** \`1 - 100\``);
+        if (!parseInt(args[0])) return client.sendTime(message.channel, `**Please choose a number between** \`1 - 150\``);
         let vol = parseInt(args[0]);
         player.setVolume(vol);
         client.sendTime(interaction, `🔉 | Volume set to \`${player.volume}\``);
@@ -30,7 +30,7 @@ module.exports = {
         options: [
             {
                 name: "number",
-                value: "number 1 - 100",
+                value: "1 - 150",
                 type: 4,
                 required: true,
                 description: "What do you want to change the volume to?",
@@ -53,9 +53,9 @@ module.exports = {
             if (!player) return client.sendTime(interaction, "❌ | **Nothing is playing right now...**");
             if (!args.length) return client.sendTime(interaction, `🔉 | Current volume \`${player.volume}\`.`);
             let vol = parseInt(args[0].value);
-            if (!vol || vol < 1 || vol > 100) return client.sendTime(interaction, `**Please choose a number between** \`1 - 100\``);
+            if (!vol || vol < 1 || vol > 150) return client.sendTime(interaction, `**Please choose a number between** \`1 - 150\``);
             player.setVolume(vol);
-            client.sendTime(interaction, `🔉 | Volume set to \`${player.volume}\``);
+            client.sendTime(message.channel, `🔉 | Volume set to \`${player.volume}\``);
         },
     },
 };
