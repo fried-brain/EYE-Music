@@ -4,7 +4,7 @@
 
 ## 📝 [Support Server](https://discord.io/teameye)
 
-Got any error or any problem with the code? Join this server and ask your question instead of creating issues unless its a code bug.
+Got any error or any problem with the code? Join this server and ask your question instead of creating issues unless its a code bug. https://discord.io/teameye
 
 ## 📸 Dashboard
 
