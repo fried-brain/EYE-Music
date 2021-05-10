@@ -1,6 +1,6 @@
 {
   "name": "discord-musicbot",
-  "version": "4.0.0",
+  "version": "2.0.0",
   "description": "Very simple discord music bot with the discord.js with Song Name playing. It can able to play music with the song name",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SudhanPlayz/Discord-MusicBot.git"
+    "url": "git+https://github.com/alonefx/EYE-Music.git"
   },
   "engines": {
     "node": "14.x"
@@ -22,12 +22,12 @@
     "music",
     "discord-music"
   ],
-  "author": "SudhanPlayz",
+  "author": "ALoneFX",
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
-    "url": "https://github.com/SudhanPlayz/Discord-MusicBot/issues"
+    "url": "https://github.com/alonefx/EYE-Music/issues"
   },
-  "homepage": "https://github.com/SudhanPlayz/Discord-MusicBot#readme",
+  "homepage": "https://github.com/alonefx/EYE-Music#readme",
   "dependencies": {
     "colors": "^1.4.0",
     "discord.js": "^12.5.3",
