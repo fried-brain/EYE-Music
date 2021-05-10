@@ -2,17 +2,17 @@ module.exports = {
   Admins: ["UserID", "UserID"], //Admins of the bot
   DefaultPrefix: ">", //Default prefix, Server Admins can change the prefix
   Port: 3000, //Which port website gonna be hosted
-  SupportServer: "https://discord.gg/a9SHDpD", //Support Server Link
+  SupportServer: "https://discord.gg/a4F4T3GkeX", //Support Server Link
   Token: "" || process.env.Token, //Discord Bot Token
-  ClientID: "834786053280759818", //Discord Client ID
-  ClientSecret: "OaFU-YKfsdbzoqprIfMbMY0R2cl--s1v", //Discord Client Secret
+  ClientID: "841289837398458400", //Discord Client ID
+  ClientSecret: "3hj_ENU2QS_yJLl36aybmluB9KVb3a2o", //Discord Client Secret
   Scopes: ["identify", "guilds", "applications.commands"], //Discord OAuth2 Scopes
   CallbackURL: "/api/callback", //Discord OAuth2 Callback URL
   "24/7": true, //If you want the bot to be stay in the vc 24/7
-  CookieSecret: "Pikachu is pichaku", //A Secret like a password
+  CookieSecret: "Pikachu is funnyy", //A Secret like a password
   IconURL:
     "https://raw.githubusercontent.com/SudhanPlayz/Discord-MusicBot/master/assets/Music.gif", //URL of all embed author icons | Dont edit unless you dont need that Music CD Spining
-  Permissions: 2205280576, //Bot Inviting Permissions
+  Permissions: 8, //Bot Inviting Permissions
   Website: "http://localhost", //Website where it was hosted at includes http or https || Use "0.0.0.0" if you using Heroku
 
   //Lavalink - Already there is a serer to connect :)
