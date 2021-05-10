@@ -11,7 +11,7 @@ const Logger = require("./Logger");
 const prettyMilliseconds = require("pretty-ms");
 
 //Class extending Stuff
-require("./EpicPlayer"); //idk why im doing but i wanna learn something new so...
+require("./EpicPlayer");
 
 class DiscordMusicBot extends Client {
   constructor(props) {
@@ -168,7 +168,7 @@ class DiscordMusicBot extends Client {
       })
       .on("queueEnd", (player) => {
         let QueueEmbed = new MessageEmbed()
-          .setAuthor("The queue has ended", this.config.IconURL)
+          .setAuthor("Your queue has ended", this.config.IconURL)
           .setColor("RANDOM")
           .setTimestamp();
         client.channels.cache.get(player.textChannel).send(QueueEmbed);
