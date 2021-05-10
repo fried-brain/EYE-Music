@@ -1,8 +1,8 @@
 {
-    "name": "Discord-MusicBot",
+    "name": "EYE-Music",
     "description": "Very simple discord music bot with the discord.js with Song Name playing. It can able to play music with the song name",
-    "repository": "https://github.com/SudhanPlayz/Discord-MusicBot",
-    "logo": "https://cdn.discordapp.com/avatars/750613142488481843/e6326038dbe2243ca551ba5b6ecd8bf2.png?size=1024",
+    "repository": "https://github.com/alonefx/EYE-Music",
+    "logo": "https://cdn.discordapp.com/attachments/775064981410414633/840620774662340628/Alogo.jpg",
     "keywords": ["node", "discord", "youtube", "music", "bot", "lavalink", "dashboard"],
     "image": "heroku/nodejs",
     "buildpacks": [
