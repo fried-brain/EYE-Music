@@ -97,7 +97,7 @@ module.exports = {
             }
         } catch (e) {
             console.log(e);
-            return client.sendTime(message.channel, "**No matches found for - **" + SearchString);
+            //return client.sendTime(message.channel, "**No matches found for - **" + SearchString);
         }
     },
 

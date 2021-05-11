@@ -18,9 +18,9 @@ module.exports = {
   //Lavalink - Already there is a serer to connect :)
   Lavalink: {
     id: "Main",
-    host: "lavalink.sudhanplayz.live",
-    port: 1234,
-    pass: "CodingWithSudhan",
+    host: "lavalink.cgofficial.org",
+    port: 2333,
+    pass: "youshallnotpass",
   },
 
   //Please go to https://developer.spotify.com/dashboard/
