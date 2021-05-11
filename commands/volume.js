@@ -24,6 +24,7 @@ module.exports = {
         if (!parseInt(args[0])) return client.sendTime(message.channel, `**Please choose a number between** \`1 - 150\``);
         let vol = parseInt(args[0]);
         player.setVolume(vol);
+        await message.react("✅");
         client.sendTime(interaction, `🔉 | Volume set to \`${player.volume}\``);
     },
     SlashCommand: {
