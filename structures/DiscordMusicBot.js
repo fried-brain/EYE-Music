@@ -151,14 +151,14 @@ class DiscordMusicBot extends Client {
           .setAuthor(`Now playing ♪`, this.config.IconURL)
           .setThumbnail(player.queue.current.displayThumbnail())
           .setDescription(`[${track.title}](${track.uri})`)
-          .addField("Requested by", `${track.requester}`, true)
-          .addField(
-            "Duration",
-            `\`${prettyMilliseconds(track.duration, {
-              colonNotation: true,
-            })}\``,
-            true
-          )
+          //.addField("Requested by", `${track.requester}`, true)
+          //.addField(
+            //"Duration",
+            //`\`${prettyMilliseconds(track.duration, {
+              //colonNotation: true,
+            //})}\``,
+            //true
+          //)
           .setColor("RANDOM");
         //.setFooter("Started playing at");
         let NowPlaying = await client.channels.cache
