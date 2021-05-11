@@ -26,7 +26,7 @@ module.exports = {
 
     let Embed = new MessageEmbed()
             .setAuthor(
-              `Commands of ${client.user.username}`,
+              `${client.user.username} Help`,
               client.config.IconURL
             )
             .setColor("RANDOM")
