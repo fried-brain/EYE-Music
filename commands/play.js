@@ -5,7 +5,7 @@ const prettyMilliseconds = require("pretty-ms");
 module.exports = {
     name: "play",
     description: "Play your favorite songs",
-    usage: "[Song Name|Song URL]",
+    usage: "[query]",
     permissions: {
         channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
         member: [],
@@ -20,13 +20,13 @@ module.exports = {
      */
     run: async (client, message, args, { GuildDB }) => {
         if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **You must be in a voice channel to play something!**");
-        //else if(message.guild.me.voice && message.guild.me.voice.channel.id !== message.member.voice.channel.id)return client.sendTime(message.channel, "❌ | **You must be in same voice channel as the bot is in to play something!**");
+        if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **You must be in the same voice channel as me to use this command!**");
         let SearchString = args.join(" ");
-        if (!SearchString) return client.sendTime(message.channel, `**Usage - **\`${GuildDB.prefix}play [Song Name|Song URL]\``);
+        if (!SearchString) return client.sendTime(message.channel, `**Usage - **\`${GuildDB.prefix}play [query]\``);
         let CheckNode = client.Manager.nodes.get(client.config.Lavalink.id);
-        let Searching = await message.channel.send(":mag_right: Searching...");
+        //let Searching = await message.channel.send(":mag_right: Searching...");
         if (!CheckNode || !CheckNode.connected) {
-       return client.sendTime(message.channel,"❌ | Lavalink node not connected.");
+       return client.sendTime(message.channel,"❌ | **Lavalink node not connected**");
         }
         const player = client.Manager.create({
             guild: message.guild.id,
@@ -55,7 +55,7 @@ module.exports = {
                     SongAddedEmbed.setAuthor(`Playlist added to queue`, message.author.displayAvatarURL());
                     SongAddedEmbed.addField("Enqueued", `\`${Searched.tracks.length}\` songs`, false);
                     //SongAddedEmbed.addField("Playlist duration", `\`${prettyMilliseconds(Searched.tracks, { colonNotation: true })}\``, false)
-                    //Searching.edit(SongAddedEmbed);
+                    Searching.edit(SongAddedEmbed);
                 } else if (Searched.loadType.startsWith("TRACK")) {
                     player.queue.add(TrackUtils.build(Searched.tracks[0], message.author));
                     if (!player.playing && !player.paused && !player.queue.size) player.play();
@@ -64,7 +64,7 @@ module.exports = {
                     SongAddedEmbed.addField("Author", Searched.tracks[0].info.author, true);
                     //SongAddedEmbed.addField("Duration", `\`${prettyMilliseconds(Searched.tracks[0].length, { colonNotation: true })}\``, true);
                     if (player.queue.totalSize > 1) SongAddedEmbed.addField("Position in queue", `${player.queue.size - 0}`, true);
-                    //Searching.edit(SongAddedEmbed);
+                    Searching.edit(SongAddedEmbed);
                 } else {
                     return client.sendTime(message.channel, "**No matches found for - **" + SearchString);
                 }
@@ -81,7 +81,7 @@ module.exports = {
                     SongAddedEmbed.setDescription(`[${Searched.playlist.name}](${SearchString})`);
                     SongAddedEmbed.addField("Enqueued", `\`${Searched.tracks.length}\` songs`, false);
                     SongAddedEmbed.addField("Playlist duration", `\`${prettyMilliseconds(Searched.playlist.duration, { colonNotation: true })}\``, false);
-                    //Searching.edit(SongAddedEmbed);
+                    Searching.edit(SongAddedEmbed);
                 } else {
                     player.queue.add(Searched.tracks[0]);
                     if (!player.playing && !player.paused && !player.queue.size) player.play();
@@ -124,10 +124,10 @@ module.exports = {
             const voiceChannel = member.voice.channel;
             let awaitchannel = client.channels.cache.get(interaction.channel_id); /// thanks Reyansh for this idea ;-;
             if (!member.voice.channel) return client.sendTime(interaction, "❌ | **You must be in a voice channel to use this command.**");
-            if (guild.me.voice.channel && !guild.me.voice.channel.equals(member.voice.channel)) return client.sendTime(interaction, `❌ | **You must be in ${guild.me.voice.channel} to use this command.**`);
+            if (guild.me.voice.channel && !guild.me.voice.channel.equals(member.voice.channel)) return client.sendTime(interaction, ":x: | **You must be in the same voice channel as me to use this command!**");
             let CheckNode = client.Manager.nodes.get(client.config.Lavalink.id);
             if (!CheckNode || !CheckNode.connected) {
-              return client.sendTime(interaction,"❌ | Lavalink node not connected.");
+              return client.sendTime(interaction,"❌ | **Lavalink node not connected**");
             }
     
             let player = client.Manager.create({
@@ -192,10 +192,10 @@ module.exports = {
                     res = await player.search(search, member.user);
                     if (res.loadType === "LOAD_FAILED") {
                         if (!player.queue.current) player.destroy();
-                        return interaction.send(`There was an error while searching`);
+                        return client.sendError(interaction, `:x: | **There was an error while searching**`);
                     }
                 } catch (err) {
-                    return client.sendTime(interaction, `There was an error while searching: ${err.message}`);
+                    return client.sendError(interaction, `There was an error while searching: ${err.message}`);
                 }
                 switch (res.loadType) {
                     case "NO_MATCHES":
