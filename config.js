@@ -18,7 +18,7 @@ module.exports = {
   //Lavalink - Already there is a serer to connect :)
   Lavalink: {
     id: process.env.Lavalink_id || "Main",
-    host: process.env.Lavalink_host || "lavalink.cgofficial.org",
+    host: process.env.Lavalink_host || "india.lavalink.org",
     port: process.env.Lavalink_port || 2333,
     pass: process.env.Lavalink_pass || "youshallnotpass",
   },
