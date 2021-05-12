@@ -50,7 +50,7 @@ module.exports = {
       return message.channel.send(new MessageEmbed()
         .setDescription(`⏭ Skipped \`${Number(args[0] - 1)}\` songs`)
         .setColor("GREEN")
-      );
+        );
     } catch (e) {
       console.log(String(e.stack).bgRed)
       client.sendError(

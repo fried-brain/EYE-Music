@@ -85,19 +85,19 @@ module.exports = {
                 } else {
                     player.queue.add(Searched.tracks[0]);
                     if (!player.playing && !player.paused && !player.queue.size) player.play();
-                    //SongAddedEmbed.setAuthor(`Added to queue`, client.config.IconURL);
+                    SongAddedEmbed.setAuthor(`Added to queue`, client.config.IconURL);
 
                     //SongAddedEmbed.setThumbnail(Searched.tracks[0].displayThumbnail());
-                    //SongAddedEmbed.setDescription(`[${Searched.tracks[0].title}](${Searched.tracks[0].uri})`);
-                    //SongAddedEmbed.addField("Author", Searched.tracks[0].author, true);
+                    SongAddedEmbed.setDescription(`[${Searched.tracks[0].title}](${Searched.tracks[0].uri})`);
+                    SongAddedEmbed.addField("Author", Searched.tracks[0].author, true);
                     //SongAddedEmbed.addField("Duration", `\`${prettyMilliseconds(Searched.tracks[0].duration, { colonNotation: true })}\``, true);
-                    //if (player.queue.totalSize > 1) SongAddedEmbed.addField("Position in queue", `${player.queue.size - 0}`, true);
-                    //Searching.edit(SongAddedEmbed);
+                    if (player.queue.totalSize > 1) SongAddedEmbed.addField("Position in queue", `${player.queue.size - 0}`, true);
+                    Searching.edit(SongAddedEmbed);
                 }
             }
         } catch (e) {
             console.log(e);
-            return client.sendTime(message.channel, "**No matches found for - **" + SearchString);
+            //return client.sendTime(message.channel, "**No matches found for - **" + SearchString);
         }
     },
 
