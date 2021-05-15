@@ -25,7 +25,7 @@ module.exports = {
 
         if (player.playing) return client.sendTime(interaction, "❌ | **Music is already resumed!**");
         player.pause(false);
-        await message.react("✅");
+        await message.react("<:check:774976288610975764>");
     },
 
     SlashCommand: {
@@ -47,7 +47,7 @@ module.exports = {
             if (!player) return client.sendTime(interaction, "❌ | **Nothing is playing right now...**");
             if (player.playing) return client.sendTime(interaction, "❌ | **Music is already resumed!**");
             player.pause(false);
-            client.sendTime(interaction, "**⏯ Resumed!**");
+            client.sendTime(interaction, "**<:check:774976288610975764> | Resumed!**");
         },
     },
 };

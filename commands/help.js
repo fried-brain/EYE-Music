@@ -1,3 +1,4 @@
+  
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
@@ -26,24 +27,22 @@ module.exports = {
 
     let Embed = new MessageEmbed()
             .setAuthor(
-              `${client.user.username} Help`,
-              client.config.IconURL
-            )
+              `${client.user.username} Help`,)
             .setColor("RANDOM")
             .setFooter(
-              `To get info of each command type ${
+              `To get info of each command type- ${
                 GuildDB ? GuildDB.prefix : client.config.DefaultPrefix
               }help [Command]`
             ).setDescription(`${Commands.join("\n")}
   
-  Version: v${require("../package.json").version}`);
+  `);
     if (!args[0]) message.channel.send(Embed);
     else {
       let cmd =
         client.commands.get(args[0]) ||
         client.commands.find((x) => x.aliases && x.aliases.includes(args[0]));
       if (!cmd)
-        return client.sendTime(message.channel, `❌ | Unable to find that command.`);
+        return client.sendTime(message.channel, `<:xmark:774976403514720267> | Unable to find that command.`);
 
       let embed = new MessageEmbed()
         .setAuthor(`Command: ${cmd.name}`, client.config.IconURL)
@@ -104,9 +103,7 @@ SlashCommand: {
   
       let Embed = new MessageEmbed()
             .setAuthor(
-              `Commands of ${client.user.username}`,
-              client.config.IconURL
-            )
+              `${client.user.username} Help`,)
             .setColor("RANDOM")
             .setFooter(
               `To get info of each command type ${
@@ -114,17 +111,14 @@ SlashCommand: {
               }help [Command] | Have a nice day!`
             ).setDescription(`${Commands.join("\n")}
   
-  Discord Music Bot Version: v${require("../package.json").version}
-  [✨ Support Server](${
-    client.config.SupportServer
-  }) | [GitHub](https://github.com/alonefx/EYE-Music) | By [ALone](https://github.com/alonefx)`);
+  `);
       if (!args) return interaction.send(Embed);
       else {
         let cmd =
           client.commands.get(args[0].value) ||
           client.commands.find((x) => x.aliases && x.aliases.includes(args[0].value));
         if (!cmd)
-          return client.sendTime(interaction, `❌ | Unable to find that command.`);
+          return client.sendTime(interaction, `<:xmark:774976403514720267> | Unable to find that command.`);
   
         let embed = new MessageEmbed()
           .setAuthor(`Command: ${cmd.name}`, client.config.IconURL)

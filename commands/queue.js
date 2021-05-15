@@ -71,7 +71,7 @@ module.exports = {
       ).join("\n");
 
       let Embed = new MessageEmbed()
-        .setAuthor("Queued Songs List",)
+        .setAuthor("Queued Songs List", client.user.displayAvatarURL())
         .setColor("RANDOM")
         .setDescription(
           `**Currently Playing:** \n[${player.queue.current.title}](${player.queue.current.uri}) \n\n**Up Next:** \n${SongsDescription}\n\n`

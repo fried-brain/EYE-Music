@@ -2,8 +2,8 @@ module.exports = {
   Admins: ["UserID", "UserID"], //Admins of the bot
   DefaultPrefix: process.env.Prefix || "x", //Default prefix, Server Admins can change the prefix
   Port: 3000, //Which port website gonna be hosted
-  SupportServer: "https://discord.gg/a9SHDpD", //Support Server Link
-  Token: process.env.Token || "ODQxMjg5ODM3Mzk4NDU4NDAw.YJkmNw.c9E6Wm0uVbmMhqLS9HtRPsz3uyY", //Discord Bot Token
+  SupportServer: "https://discord.io/teameye", //Support Server Link
+  Token: process.env.Token || "", //Discord Bot Token
   ClientID: process.env.Discord_ClientID || "841289837398458400", //Discord Client ID
   ClientSecret: process.env.Discord_ClientSecret || "3hj_ENU2QS_yJLl36aybmluB9KVb3a2o", //Discord Client Secret
   Scopes: ["identify", "guilds", "applications.commands"], //Discord OAuth2 Scopes
@@ -17,10 +17,10 @@ module.exports = {
 
   //Lavalink - Already there is a serer to connect :)
   Lavalink: {
-    id: process.env.Lavalink_id || "Main",
-    host: process.env.Lavalink_host || "india.lavalink.org",
-    port: process.env.Lavalink_port || 2333,
-    pass: process.env.Lavalink_pass || "youshallnotpass",
+    id: process.env.Lavalink_id || "Main", //Lavalink id 
+    host: process.env.Lavalink_host || "india.lavalink.org", //Lavalink host server
+    port: 2333, //Lavalink port
+    pass: process.env.Lavalink_pass || "youshallnotpass", //Lavalink password
   },
 
   //Please go to https://developer.spotify.com/dashboard/

@@ -42,7 +42,7 @@ run: async (client, message, args, { GuildDB }) => {
       return message.channel.send("**:x: Your DMs are disabled**")
     })    
 
-    client.sendTime(message.channel, "✅ | **Check your DMs!**")
+    client.sendTime(message.channel, "✔️ | **Check your DMs!**")
   },
   SlashCommand: {
 /**

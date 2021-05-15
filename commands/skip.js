@@ -23,7 +23,7 @@ module.exports = {
         if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **You must be in a voice channel to use this command!**");
         if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **You must be in the same voice channel as me to use this command!**");
         player.stop();
-        await message.react("✅");
+        await message.react("<:check:774976288610975764>");
     },
     SlashCommand: {
         /**

@@ -2,7 +2,7 @@ module.exports = async (client) => {
   client.Ready = true, 
     client.user.setPresence({
         activity: { 
-            name: 'Music', // The message shown
+            name: 'xhelp | ALoneNUB', // The message shown
             type: 'LISTENING', // PLAYING, WATCHING, LISTENING, STREAMING
         },
         status: 'online' // You can show online, idle, dnd(Do Not Disturb)

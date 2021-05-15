@@ -8,7 +8,7 @@ module.exports = {
     channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
     member: [],
   },
-  aliases: ["stop", "exit", "quit", "dc", "disconnect"],
+  aliases: ["stop", "exit", "quit", "dc"],
   /**
    *
    * @param {import("../structures/DiscordMusicBot")} client
@@ -20,8 +20,8 @@ module.exports = {
     let player = await client.Manager.get(message.guild.id);
     if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **You must be in a voice channel to play something!**");
     if (!player) return client.sendTime(message.channel,"❌ | **Nothing is playing right now...**");
-    await client.sendTime(message.channel,":notes: | **The player has stopped and the queue has been cleared.**");
-    await message.react("✅");
+    //await client.sendTime(message.channel,":notes: | **The player has stopped and the queue has been cleared.**");
+    await message.react("🛑");
     player.destroy();
   },
 
