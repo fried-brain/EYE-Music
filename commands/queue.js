@@ -23,7 +23,7 @@ module.exports = {
     if (!player)
       return client.sendTime(
         message.channel,
-        "❌ | **Nothing is playing right now...**"
+        "<:xmark:774976403514720267> | **Nothing is playing right now...**"
       );
 
     if (!player.queue || !player.queue.length || player.queue === 0) {
@@ -119,7 +119,7 @@ module.exports = {
     run: async (client, interaction, args, { GuildDB }) => {
       let player = await client.Manager.get(interaction.guild_id);
       if (!player)
-        return interaction.send("❌ | **Nothing is playing right now...**");
+        return interaction.send("<:xmark:774976403514720267> | **Nothing is playing right now...**");
 
       if (!player.queue || !player.queue.length || player.queue === 0) {
         let QueueEmbed = new MessageEmbed()

@@ -27,7 +27,7 @@ module.exports = {
     if (!player.queue || !player.queue.length || player.queue.length === 0)
       return client.sendTime(message.channel, "<:xmark:774976403514720267> | **Nothing is playing right now...**");
       if (!message.member.voice.channel) return client.sendTime(message.channel, "<:xmark:774976403514720267> | **You must be in a voice channel to play something!**");
-      if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **You must be in the same voice channel as me to use this command!**");
+      if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, "<:xmark:774976403514720267> | **You must be in the same voice channel as me to use this command!**");
     player.queue.clear();
     await client.sendTime(message.channel, "<:check:774976288610975764> | **Cleared the queue!**");
   },
@@ -44,7 +44,7 @@ module.exports = {
       const guild = client.guilds.cache.get(interaction.guild_id);
       const member = guild.members.cache.get(interaction.member.user.id);
       if (!member.voice.channel) return client.sendTime(interaction, "<:xmark:774976403514720267> | You must be in a voice channel to use this command.");
-      if (guild.me.voice.channel && !guild.me.voice.channel.equals(member.voice.channel)) return client.sendTime(interaction, ":x: | **You must be in the same voice channel as me to use this command!**");
+      if (guild.me.voice.channel && !guild.me.voice.channel.equals(member.voice.channel)) return client.sendTime(interaction, "<:xmark:774976403514720267> | **You must be in the same voice channel as me to use this command!**");
       let player = await client.Manager.get(interaction.guild_id);
       if (!player)
         return client.sendTime(interaction, "<:xmark:774976403514720267> | **Nothing is playing right now...**");

@@ -26,9 +26,9 @@ module.exports = {
       selfDeafen: false,
     });
     
-    if (!player) return client.sendTime(message.channel, "❌ | **Nothing is playing right now...**");
-    if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **You must be in a voice channel to use this command!**");
-    //else if(message.guild.me.voice && message.guild.me.voice.channel.id !== message.member.voice.channel.id)return client.sendTime(message.channel, `❌ | **You must be in ${guild.me.voice.channel} to use this command.**`);
+    if (!player) return client.sendTime(message.channel, "<:xmark:774976403514720267> | **Nothing is playing right now...**");
+    if (!message.member.voice.channel) return client.sendTime(message.channel, "<:xmark:774976403514720267> | **You must be in a voice channel to use this command!**");
+    //else if(message.guild.me.voice && message.guild.me.voice.channel.id !== message.member.voice.channel.id)return client.sendTime(message.channel, `<:xmark:774976403514720267> | **You must be in ${guild.me.voice.channel} to use this command.**`);
      
     try {
       if (!args[0])
@@ -40,7 +40,7 @@ module.exports = {
       if (Number(args[0]) > player.queue.size)
         return message.channel.send(new MessageEmbed()
           .setColor("GREEN")
-          .setDescription(`❌ | That song is not in the queue! Please try again!`)
+          .setDescription(`<:xmark:774976403514720267> | That song is not in the queue! Please try again!`)
         );
       //remove all tracks to the jumped song
       player.queue.remove(0, Number(args[0]) - 1);
@@ -95,7 +95,7 @@ module.exports = {
       if (Number(args[0]) > player.queue.size)
         return interaction.send(new MessageEmbed()
           .setColor("GREEN")
-          .setTitle(`❌ | That song is not in the queue! Please try again!`)
+          .setTitle(`<:xmark:774976403514720267> | That song is not in the queue! Please try again!`)
         );
       //remove all tracks to the jumped song
       player.queue.remove(0, Number(args[0]) - 1);

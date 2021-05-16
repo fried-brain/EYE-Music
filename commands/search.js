@@ -23,9 +23,9 @@ module.exports = {
     if (!message.member.voice.channel)
       return client.sendTime(
         message.channel,
-        "❌ | **You must be in a voice channel to play something!**"
+        "<:xmark:774976403514720267> | **You must be in a voice channel to play something!**"
       );
-      if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, ":x: | **You must be in the same voice channel as me to use this command!**");
+      if (message.guild.me.voice.channel && message.member.voice.channel.id !== message.guild.me.voice.channel.id) return client.sendTime(message.channel, "<:xmark:774976403514720267> | **You must be in the same voice channel as me to use this command!**");
 
     let SearchString = args.join(" ");
     if (!SearchString)
@@ -37,7 +37,7 @@ module.exports = {
     if (!CheckNode || !CheckNode.connected) {
       return client.sendTime(
         message.channel,
-        "❌ | **Lavalink node not connected**"
+        "<:xmark:774976403514720267> | **Lavalink node not connected**"
       );
     }
     const player = client.Manager.create({
@@ -160,7 +160,7 @@ module.exports = {
       if (!member.voice.channel)
         return client.sendTime(
           interaction,
-          "❌ | **You must be in a voice channel to use this command.**"
+          "<:xmark:774976403514720267> | **You must be in a voice channel to use this command.**"
         );
       if (
         guild.me.voice.channel &&
@@ -174,7 +174,7 @@ module.exports = {
       if (!CheckNode || !CheckNode.connected) {
         return client.sendTime(
           interaction,
-          "❌ | **Lavalink node not connected**"
+          "<:xmark:774976403514720267> | **Lavalink node not connected**"
         );
       }
       let player = client.Manager.create({
@@ -295,7 +295,7 @@ module.exports = {
             } catch (e) {
               if (!player.queue.current) player.destroy();
               return awaitchannel.send(
-                "❌ | **You didn't provide a selection**"
+                "<:xmark:774976403514720267> | **You didn't provide a selection**"
               );
             }
 

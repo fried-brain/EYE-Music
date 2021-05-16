@@ -5,13 +5,13 @@ module.exports = {
   SupportServer: "https://discord.io/teameye", //Support Server Link
   Token: process.env.Token || "", //Discord Bot Token
   ClientID: process.env.Discord_ClientID || "841289837398458400", //Discord Client ID
-  ClientSecret: process.env.Discord_ClientSecret || "3hj_ENU2QS_yJLl36aybmluB9KVb3a2o", //Discord Client Secret
+  ClientSecret: process.env.Discord_ClientSecret || "", //Discord Client Secret
   Scopes: ["identify", "guilds", "applications.commands"], //Discord OAuth2 Scopes
   CallbackURL: "/api/callback", //Discord OAuth2 Callback URL
   "24/7": false, //If you want the bot to be stay in the vc 24/7
   CookieSecret: "Pikachu is bts", //A Secret like a password
   IconURL:
-    "https://raw.githubusercontent.com/alonefx/EYE-Music/master/assets/Music.gif", //URL of all embed author icons | Dont edit unless you dont need that Music CD Spining
+    "https://cdn.discordapp.com/attachments/807257475278569473/842642320666918912/1620971978415.png", //URL of all embed author icons | Dont edit unless you dont need that Music CD Spining
   Permissions: 2205280576, //Bot Inviting Permissions
   Website: process.env.Website || "http://localhost", //Website where it was hosted at includes http or https || Use "0.0.0.0" if you using Heroku
 
