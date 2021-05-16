@@ -8,7 +8,7 @@ Got any error or any problem with the code? Join this server and ask your questi
 
 ## 📸 Dashboard
 
-<div align="center"><img src="/assets/Features.png"></div>
+Coming Soon..
 
 ## 💨 Run the projects
 

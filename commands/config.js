@@ -18,7 +18,7 @@ module.exports = {
    */
   run: async (client, message, args, { GuildDB }) => {
     let Config = new MessageEmbed()
-      .setAuthor("Server Config", client.config.IconURL)
+      .setAuthor("Server Config", client.user.displayAvatarURL())
       .setColor("RANDOM")
       .addField("Prefix", GuildDB.prefix, true)
       .addField("DJ Role", GuildDB.DJ ? `<@&${GuildDB.DJ}>` : "Not Set", true)
@@ -40,7 +40,7 @@ What would you like to edit?
     ).catch(() => {
       ConfigMessage.reactions.removeAll();
       client.sendTime(
-        message.channel, "❌ | **You took too long to respond. If you want to edit the settings, run the command again!**"
+        message.channel, "<:xmark:774976403514720267> | **You took too long to respond. If you want to edit the settings, run the command again!**"
       );
       ConfigMessage.delete(Config);
     });

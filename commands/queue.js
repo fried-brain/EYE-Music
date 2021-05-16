@@ -23,31 +23,31 @@ module.exports = {
     if (!player)
       return client.sendTime(
         message.channel,
-        "❌ | **Nothing is playing right now...**"
+        "<:xmark:774976403514720267> | **Nothing is playing right now...**"
       );
 
     if (!player.queue || !player.queue.length || player.queue === 0) {
       let QueueEmbed = new MessageEmbed()
-        .setAuthor("Currently playing", client.config.IconURL)
+        .setAuthor("Currently playing",)
         .setColor("RANDOM")
         .setDescription(
           `[${player.queue.current.title}](${player.queue.current.uri})`
         )
         .addField("Requested by", `${player.queue.current.requester}`, true)
-        .addField(
-          "Duration",
-          `${
-            client.ProgressBar(
-              player.position,
-              player.queue.current.duration,
-              15
-            ).Bar
-          } \`[${prettyMilliseconds(player.position, {
-            colonNotation: true,
-          })} / ${prettyMilliseconds(player.queue.current.duration, {
-            colonNotation: true,
-          })}]\``
-        )
+        //.addField(
+          //"Duration",
+          //`${
+            //client.ProgressBar(
+              //player.position,
+              //player.queue.current.duration,
+              //15
+            //).Bar
+          //} \`[${prettyMilliseconds(player.position, {
+            //colonNotation: true,
+          //})} / ${prettyMilliseconds(player.queue.current.duration, {
+            //colonNotation: true,
+          //})}]\``
+        //)
         .setThumbnail(player.queue.current.displayThumbnail());
       return message.channel.send(QueueEmbed);
     }
@@ -71,7 +71,7 @@ module.exports = {
       ).join("\n");
 
       let Embed = new MessageEmbed()
-        .setAuthor("Queue", client.config.IconURL)
+        .setAuthor("Queued Songs List", client.user.displayAvatarURL())
         .setColor("RANDOM")
         .setDescription(
           `**Currently Playing:** \n[${player.queue.current.title}](${player.queue.current.uri}) \n\n**Up Next:** \n${SongsDescription}\n\n`
@@ -84,21 +84,21 @@ module.exports = {
           })}\``,
           true
         )
-        .addField("Requested by:", `${player.queue.current.requester}`, true)
-        .addField(
-          "Current song duration:",
-          `${
-            client.ProgressBar(
-              player.position,
-              player.queue.current.duration,
-              15
-            ).Bar
-          } \`${prettyMilliseconds(player.position, {
-            colonNotation: true,
-          })} / ${prettyMilliseconds(player.queue.current.duration, {
-            colonNotation: true,
-          })}\``
-        )
+        //.addField("Requested by:", `${player.queue.current.requester}`, true)
+        //.addField(
+          //"Current song duration:",
+          //`${
+            //client.ProgressBar(
+              //player.position,
+              //player.queue.current.duration,
+              //15
+            //).Bar
+          //} \`${prettyMilliseconds(player.position, {
+            //colonNotation: true,
+          //})} / ${prettyMilliseconds(player.queue.current.duration, {
+            //colonNotation: true,
+          //})}\``
+        //)
         .setThumbnail(player.queue.current.displayThumbnail());
 
       return Embed;
@@ -119,7 +119,7 @@ module.exports = {
     run: async (client, interaction, args, { GuildDB }) => {
       let player = await client.Manager.get(interaction.guild_id);
       if (!player)
-        return interaction.send("❌ | **Nothing is playing right now...**");
+        return interaction.send("<:xmark:774976403514720267> | **Nothing is playing right now...**");
 
       if (!player.queue || !player.queue.length || player.queue === 0) {
         let QueueEmbed = new MessageEmbed()

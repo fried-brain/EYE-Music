@@ -8,7 +8,7 @@ module.exports = {
     channel: ["VIEW_CHANNEL", "SEND_MESSAGES", "EMBED_LINKS"],
     member: [],
   },
-  aliases: ["stop", "exit", "quit", "dc", "disconnect"],
+  aliases: ["stop", "exit", "quit", "dc"],
   /**
    *
    * @param {import("../structures/DiscordMusicBot")} client
@@ -18,10 +18,10 @@ module.exports = {
    */
   run: async (client, message, args, { GuildDB }) => {
     let player = await client.Manager.get(message.guild.id);
-    if (!message.member.voice.channel) return client.sendTime(message.channel, "❌ | **You must be in a voice channel to play something!**");
-    if (!player) return client.sendTime(message.channel,"❌ | **Nothing is playing right now...**");
-    await client.sendTime(message.channel,":notes: | **The player has stopped and the queue has been cleared.**");
-    await message.react("✅");
+    if (!message.member.voice.channel) return client.sendTime(message.channel, "<:xmark:774976403514720267> | **You must be in a voice channel to play something!**");
+    if (!player) return client.sendTime(message.channel,"<:xmark:774976403514720267> | **Nothing is playing right now...**");
+    //await client.sendTime(message.channel,":notes: | **The player has stopped and the queue has been cleared.**");
+    await message.react("🛑");
     player.destroy();
   },
 
@@ -40,7 +40,7 @@ module.exports = {
       if (!member.voice.channel)
         return client.sendTime(
           interaction,
-          "❌ | **You must be in a voice channel to use this command.**"
+          "<:xmark:774976403514720267> | **You must be in a voice channel to use this command.**"
         );
       if (
         guild.me.voice.channel &&
@@ -48,14 +48,14 @@ module.exports = {
       )
         return client.sendTime(
           interaction,
-          `❌ | **You must be in ${guild.me.voice.channel} to use this command.**`
+          `<:xmark:774976403514720267> | **You must be in ${guild.me.voice.channel} to use this command.**`
         );
 
       let player = await client.Manager.get(interaction.guild_id);
       if (!player)
         return client.sendTime(
           interaction,
-          "❌ | **Nothing is playing right now...**"
+          "<:xmark:774976403514720267> | **Nothing is playing right now...**"
         );
       player.destroy();
       client.sendTime(

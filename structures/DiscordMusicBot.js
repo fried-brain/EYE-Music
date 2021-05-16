@@ -148,9 +148,9 @@ class DiscordMusicBot extends Client {
       .on("trackStart", async (player, track) => {
         this.SongsPlayed++;
         let TrackStartedEmbed = new MessageEmbed()
-          .setAuthor(`Started Playing ♪`, this.config.IconURL)
+          .setAuthor(`Started playing ♪`,)
           .setThumbnail(player.queue.current.displayThumbnail())
-          .setDescription(`[${track.title}](${track.uri})`)
+          .setDescription(`[${track.title}](${track.uri}) [${player.queue.current.requester}]`)
           //.addField("Requested by", `${track.requester}`, true)
           //.addField(
             //"Duration",
@@ -168,7 +168,7 @@ class DiscordMusicBot extends Client {
       })
       .on("queueEnd", (player) => {
         let QueueEmbed = new MessageEmbed()
-          .setAuthor("Your queue has ended", this.config.IconURL)
+          .setAuthor("Your queue has ended",)
           .setColor("RANDOM")
           .setTimestamp();
         client.channels.cache.get(player.textChannel).send(QueueEmbed);

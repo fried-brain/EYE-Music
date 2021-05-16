@@ -22,12 +22,12 @@ module.exports = {
     if (!player)
       return client.sendTime(
         message.channel,
-        "❌ | **Nothing is playing right now...**"
+        "<:xmark:774976403514720267> | **Nothing is playing right now...**"
       );
 
     let song = player.queue.current;
     let QueueEmbed = new MessageEmbed()
-      .setAuthor("Currently playing", client.config.IconURL)
+      .setAuthor("Now playing",)
       .setColor("RANDOM")
       .setDescription(`[${song.title}](${song.uri})`)
       .addField("Requested by", `${song.requester}`, true)
@@ -59,7 +59,7 @@ module.exports = {
       if (!player)
         return client.sendTime(
           interaction,
-          "❌ | **Nothing is playing right now...**"
+          "<:xmark:774976403514720267> | **Nothing is playing right now...**"
         );
 
       let song = player.queue.current;

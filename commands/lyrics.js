@@ -23,7 +23,7 @@ module.exports = {
     let player = await client.Manager.get(message.guild.id);
     let SongTitle = args.join(" ");
     let SearchString = args.join(" ");
-    if (!args[0] && !player) return client.sendTime(message.channel, "❌ | **Nothing is playing right now...**");
+    if (!args[0] && !player) return client.sendTime(message.channel, "<:xmark:774976403514720267> | **Nothing is playing right now...**");
     if (!args[0]) SongTitle = player.queue.current.title;
 
     let lyrics = await lyricsFinder(SongTitle);
@@ -67,7 +67,7 @@ module.exports = {
     run: async (client, interaction, args, { GuildDB }) => {
       let player = await client.Manager.get(interaction.guild_id);
 
-      if (!interaction.data.options && !player) return client.sendTime(interaction, "❌ | **Nothing is playing right now...**");
+      if (!interaction.data.options && !player) return client.sendTime(interaction, "<:xmark:774976403514720267> | **Nothing is playing right now...**");
 
       SongTitle = interaction.data.options ? interaction.data.options[0].value : player.queue.current.title;
       let lyrics = await lyricsFinder(SongTitle);
