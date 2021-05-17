@@ -17,10 +17,10 @@ module.exports = {
 
   //Lavalink - Already there is a serer to connect :)
   Lavalink: {
-    id: process.env.Lavalink_id || "Main", //Lavalink id 
-    host: process.env.Lavalink_host || "india.lavalink.org", //Lavalink host server
+    id: "Main", //Lavalink id 
+    host: "india.lavalink.org", //Lavalink host server
     port: 2333, //Lavalink port
-    pass: process.env.Lavalink_pass || "youshallnotpass", //Lavalink password
+    pass: "youshallnotpass", //Lavalink password
   },
 
   //Please go to https://developer.spotify.com/dashboard/
