@@ -4,11 +4,11 @@ module.exports = {
   Port: 3000, //Which port website gonna be hosted
   SupportServer: "https://discord.io/teameye", //Support Server Link
   Token: process.env.Token || "", //Discord Bot Token
-  ClientID: process.env.Discord_ClientID || "841289837398458400", //Discord Client ID
+  ClientID: process.env.Discord_ClientID || "", //Discord Client ID
   ClientSecret: process.env.Discord_ClientSecret || "", //Discord Client Secret
   Scopes: ["identify", "guilds", "applications.commands"], //Discord OAuth2 Scopes
   CallbackURL: "/api/callback", //Discord OAuth2 Callback URL
-  "24/7": false, //If you want the bot to be stay in the vc 24/7
+  "24/7": true, //If you want the bot to be stay in the vc 24/7
   CookieSecret: "Pikachu is bts", //A Secret like a password
   IconURL:
     "https://cdn.discordapp.com/attachments/807257475278569473/842642320666918912/1620971978415.png", //URL of all embed author icons | Dont edit unless you dont need that Music CD Spining
@@ -25,7 +25,7 @@ module.exports = {
 
   //Please go to https://developer.spotify.com/dashboard/
   Spotify: {
-    ClientID: process.env.Spotify_ClientID || "be8ac982d8a04263812aac637d671189", //Spotify Client ID
-    ClientSecret: process.env.Spotify_ClientSecret || "fd1b4b2ca3394d79b558125529df9848", //Spotify Client Secret
+    ClientID: process.env.Spotify_ClientID || "", //Spotify Client ID
+    ClientSecret: process.env.Spotify_ClientSecret || "", //Spotify Client Secret
   },
 };
