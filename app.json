@@ -39,22 +39,5 @@
           "description": "Spotify ClientSecret",
           "required": "true"
         },
-        "Lavalink_id": {
-          "description": "Lavalink id",
-          "required": "true"
-        },
-        "Lavalink_host": {
-          "description": "Lavalink host",
-          "required": "true"
-        },
-        "Lavalink_port": {
-          "description": "Lavalink port",
-          "required": "true"
-        },
-        "Lavalink_pass": {
-          "description": "Lavalink pass",
-          "required": "true"
-        }
       }
     }
-
