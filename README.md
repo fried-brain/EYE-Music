@@ -13,7 +13,7 @@ Coming Soon..
 ## 💨 Run the projects
 
 Glitch: [![Remix on Glitch](https://cdn.glitch.com/2703baf2-b643-4da7-ab91-7ee2a2d00b5b%2Fremix-button.svg)](https://glitch.com/edit/#!/import/github/alonefx/EYE-Music)
-Repl: [![Run on Repl.it](https://repl.it/badge/github/SudhanPlayz/Discord-MusicBot)](https://repl.it/github/alonefx/EYE-Music)
+Repl: [![Run on Repl.it](https://repl.it/badge/github/alonefx/Discord-MusicBot)](https://repl.it/github/alonefx/EYE-Music)
 Heroku: [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/alonefx/EYE-Music)
 
 ## ✨ Contributors
