@@ -1,4 +1,4 @@
-<h1 align="center"><img src="./assets/logo.gif" width="30px"> EYE Music Bot <img src="./assets/logo.gif" width="30px"></h1>
+# EYE Music Bot
 <p align="center">Thanks for Your love & support!</p>
 
 
