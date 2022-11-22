@@ -43,7 +43,7 @@
     "passport": "^0.4.1",
     "passport-discord": "^0.1.4",
     "pretty-ms": "^7.0.1",
-    "socket.io": "^4.0.1",
+    "socket.io": "^4.5.3",
     "winston": "^3.3.3"
   },
   "devDependencies": {
